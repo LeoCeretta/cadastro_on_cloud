@@ -1,0 +1,84 @@
+# 🛒 Cadastro de Produtos com Streamlit e Azure SQL Server
+
+Este projeto é uma aplicação web desenvolvida com **Streamlit** para interface gráfica e **Azure SQL Server** para persistência dos dados. A solução permite cadastrar produtos, armazená-los em um banco de dados na nuvem e gerenciar o armazenamento de forma eficiente.
+
+---
+
+## 📸 Demonstração da Interface
+
+<!-- Adicione aqui uma imagem do Streamlit rodando -->
+![Interface Streamlit](imagens/interface-streamlit.png)
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- **[Streamlit](https://streamlit.io/)**: Criação da interface web de forma rápida e interativa.
+- **[Azure Blob Storage](https://learn.microsoft.com/pt-br/azure/storage/blobs/)**: Armazenamento de arquivos e imagens dos produtos.
+- **[SQL Server on Azure](https://azure.microsoft.com/pt-br/products/azure-sql/)**: Banco de dados para armazenar os registros de produtos.
+- **[pymssql](http://www.pymssql.org/)**: Conexão com o banco de dados SQL Server a partir do Python.
+
+---
+
+## 🧩 Bibliotecas Python Utilizadas
+
+```python
+import streamlit as st
+from azure.storage.blob import BlobServiceClient
+import os
+import pymssql
+import uuid
+import json 
+``` 
+
+## 🏗️ Estrutura do projeto
+├── main.py
+├── infos.txt
+├── .env
+├── requirements.txt
+└── README.md
+
+## ⚙️ Configuração do Ambiente
+1. Clone este repositório:
+```
+git clone https://github.com/LeoCeretta/cadastro_on_cloud.git
+cd cadastro_on_cloud
+``` 
+2. Crie um ambiente virtual e instale as dependências:
+```
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+
+pip install -r requirements.txt
+```
+3. Configure as variáveis de ambiente:
+- Crie um arquivo .env na raiz do projeto com as credenciais do Azure SQL:
+```
+DB_SERVER=seu-servidor.database.windows.net
+DB_NAME=seu-banco-de-dados
+DB_USER=seu-usuario
+DB_PASSWORD=sua-senha
+```
+
+
+## 🛠️ Como Executar
+```
+streamlit run app.py
+```
+
+## 🧪 Funcionalidades
+- Cadastro de produtos com nome, descrição, imagem e preço.
+
+- Armazenamento das imagens no Azure Blob Storage.
+
+- Persistência dos dados no banco de dados SQL Server.
+
+- Visualização dos produtos cadastrados.
+
+
+📃 Licença
+Este projeto está licenciado sob a MIT License.
+
+🙋‍♂️ Autor
+Feito com 💙 por Leonardo D. Ceretta
